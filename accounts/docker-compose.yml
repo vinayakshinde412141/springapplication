@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  accounts:
+    image: vinayakshinde058/accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - vinayakbank-network
+
+  loans:
+    image: vinayakshinde058/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - vinayakbank-network
+
+  cards:
+    image: vinayakshinde058/cards:latest
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - vinayakbank-network
+
+networks:
+  vinayakbank-network:
